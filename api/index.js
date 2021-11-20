@@ -14,7 +14,6 @@ const api = new OpenAPIBackend({
   api.register('validationFail', (c, req, res) => res.status(400).json({ err: c.validation.errors }))
 
 app.get('/api', async (req, res) => {
-  const path = `/api/item/${v4()}`;
   res.setHeader('Content-Type', 'text/html');
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   const oasRequest = {
